@@ -4,9 +4,16 @@ namespace LearnMagento\DependencyExample\Model;
 
 class Main
 {
-    public function getId(): string
+    private array $data;
+
+    public function __construct(array $data = [])
     {
-        return "Class Main";
+        $this->data = $data;
+    }
+
+    public function getId(array $data=[]): string
+    {
+        return $this->data['id'];
     }
 }
 
