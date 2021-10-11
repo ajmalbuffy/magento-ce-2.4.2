@@ -4,13 +4,8 @@
         <title>Layout Example</title>
     </head>
     <body>
-        <referenceBlock name="page.main.title">
-            <action method="setPageTitle">
-                <argument name="page_title" xsi:type="string"> Something else</argument>
-            </action>
-        </referenceBlock>
         <referenceContainer name="content">
-            <block name="layout_example" class="Magento\Framework\View\Element\Template" template="LearnMagento_LayoutExample::content.phtml"/>
+            <block name="layout_example" class="LearnMagento\LayoutExample\Block\Layout\Index" template="LearnMagento_LayoutExample::content.phtml"/>
         </referenceContainer>
     </body>
 </page>
