@@ -6,11 +6,20 @@ class Main
 {
     private array $data;
     private Injectable $injectable;
+    protected NonInjectableFactory $nonInjectableFactory;
 
-    public function __construct(Injectable $injectable, array $data = [])
+    /**
+     * @param Injectable $injectable
+     * @param NonInjectableFactory $nonInjectableFactory
+     * @param array $data
+     */
+    public function __construct(Injectable           $injectable,
+                                NonInjectableFactory $nonInjectableFactory,
+                                array                $data = [])
     {
         $this->data = $data;
         $this->injectable = $injectable;
+        $this->nonInjectableFactory = $nonInjectableFactory;
     }
 
     public function getId(array $data=[]): string
@@ -21,6 +30,11 @@ class Main
     public function getInjectable(): Injectable
     {
         return $this->injectable;
+    }
+
+    public function getNonInjectable(): NonInjectable
+    {
+        return $this->nonInjectableFactory->create();
     }
 }
 
